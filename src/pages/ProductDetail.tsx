@@ -1,6 +1,7 @@
 
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ShoppingBag, CheckCircle, ChevronRight } from "lucide-react";
+import { ShoppingBag, CheckCircle, ChevronRight, ChevronLeft } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { PageHeader } from "@/components/PageHeader";
 import { Section } from "@/components/Section";
@@ -20,6 +21,11 @@ const products = {
     shelfLife: "8 months",
     ingredients: ["Flattened rice", "Peanuts", "Salt", "Vegetable oil", "Traditional Nepali spices"],
     image: "/lovable-uploads/623cbeee-d5dd-44e1-87e5-ea19d8fb9db5.png",
+    images: [
+      "/lovable-uploads/623cbeee-d5dd-44e1-87e5-ea19d8fb9db5.png",
+      "/lovable-uploads/368f0561-802c-49f8-80b0-6bb7dfd2f042.png",
+      "/lovable-uploads/c4218253-7110-4d14-ac25-b822e8ba6195.png"
+    ],
     benefits: [
       "All-natural ingredients",
       "No artificial preservatives",
@@ -84,6 +90,7 @@ const reviews = [
 const ProductDetail = () => {
   const { productId } = useParams<{ productId: string }>();
   const product = productId ? products[productId as keyof typeof products] : null;
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   if (!product) {
     return (
@@ -104,12 +111,27 @@ const ProductDetail = () => {
     );
   }
 
+  const hasMultipleImages = product.images && product.images.length > 1;
+  const displayImages = hasMultipleImages ? product.images : [product.image];
+  
+  const handlePrevImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev === 0 ? displayImages.length - 1 : prev - 1
+    );
+  };
+  
+  const handleNextImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev === displayImages.length - 1 ? 0 : prev + 1
+    );
+  };
+
   return (
     <Layout>
       <PageHeader 
         title={product.name}
         subtitle={`${product.nepaliName} - Traditional Nepali Snack`}
-        imageUrl={product.image}
+        imageUrl={displayImages[currentImageIndex]}
       />
       
       <Section>
@@ -118,15 +140,51 @@ const ProductDetail = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="product-image-container overflow-hidden rounded-2xl"
+            className="product-image-container overflow-hidden rounded-2xl relative"
           >
             <img
-              src={product.image}
-              alt={product.name}
+              src={displayImages[currentImageIndex]}
+              alt={`${product.name} - Image ${currentImageIndex + 1}`}
               className="w-full h-auto object-cover"
             />
+            
+            {hasMultipleImages && (
+              <>
+                <button 
+                  onClick={handlePrevImage}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-md transition-all duration-300"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="h-5 w-5 text-gray-700" />
+                </button>
+                
+                <button 
+                  onClick={handleNextImage}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-md transition-all duration-300"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="h-5 w-5 text-gray-700" />
+                </button>
+                
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                  {displayImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                        currentImageIndex === index 
+                          ? "bg-brand-red scale-125" 
+                          : "bg-white/70 hover:bg-white"
+                      }`}
+                      aria-label={`View image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
           </motion.div>
           
+          {/* Product details */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}

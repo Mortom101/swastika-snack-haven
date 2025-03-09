@@ -1,3 +1,4 @@
+
 import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronRight, ShoppingBag, Clock, Leaf, Truck } from "lucide-react";
@@ -11,6 +12,12 @@ const productImages = {
   phurandana: "/lovable-uploads/623cbeee-d5dd-44e1-87e5-ea19d8fb9db5.png",
   bakedPeanuts: "/lovable-uploads/368f0561-802c-49f8-80b0-6bb7dfd2f042.png",
 };
+
+const phurandanaImages = [
+  "/lovable-uploads/623cbeee-d5dd-44e1-87e5-ea19d8fb9db5.png",
+  "/lovable-uploads/368f0561-802c-49f8-80b0-6bb7dfd2f042.png", 
+  "/lovable-uploads/c4218253-7110-4d14-ac25-b822e8ba6195.png"
+];
 
 const reviews = [
   {
@@ -172,6 +179,7 @@ const Index = () => {
             price={250}
             weight="500g"
             image={productImages.phurandana}
+            images={phurandanaImages}
             index={0}
           />
           

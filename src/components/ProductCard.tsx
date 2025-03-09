@@ -12,6 +12,7 @@ interface ProductCardProps {
   price: number;
   weight: string;
   image: string;
+  images?: string[];
   index?: number;
 }
 
@@ -23,6 +24,7 @@ export const ProductCard = ({
   price,
   weight,
   image,
+  images = [],
   index = 0,
 }: ProductCardProps) => {
   const [ref, inView] = useInView({
@@ -42,6 +44,9 @@ export const ProductCard = ({
     }
   };
 
+  // Use the first image from the gallery if available, otherwise use the main image
+  const displayImage = images && images.length > 0 ? images[0] : image;
+
   return (
     <motion.div
       ref={ref}
@@ -52,7 +57,7 @@ export const ProductCard = ({
     >
       <div className="product-image-container relative">
         <img 
-          src={image} 
+          src={displayImage} 
           alt={name} 
           className="product-image w-full h-64 object-cover"
         />
