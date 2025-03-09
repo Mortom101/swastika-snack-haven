@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ShoppingBag, CheckCircle, ChevronRight, ChevronLeft } from "lucide-react";
@@ -20,10 +19,8 @@ const products = {
     weight: "500g",
     shelfLife: "8 months",
     ingredients: ["Flattened rice", "Peanuts", "Salt", "Vegetable oil", "Traditional Nepali spices"],
-    image: "/lovable-uploads/623cbeee-d5dd-44e1-87e5-ea19d8fb9db5.png",
+    image: "/lovable-uploads/c4218253-7110-4d14-ac25-b822e8ba6195.png",
     images: [
-      "/lovable-uploads/623cbeee-d5dd-44e1-87e5-ea19d8fb9db5.png",
-      "/lovable-uploads/368f0561-802c-49f8-80b0-6bb7dfd2f042.png",
       "/lovable-uploads/c4218253-7110-4d14-ac25-b822e8ba6195.png"
     ],
     benefits: [
@@ -50,6 +47,9 @@ const products = {
     shelfLife: "8 months",
     ingredients: ["Peanuts", "Soybeans", "Salt", "Vegetable oil", "Chili", "Traditional Nepali spices"],
     image: "/lovable-uploads/368f0561-802c-49f8-80b0-6bb7dfd2f042.png",
+    images: [
+      "/lovable-uploads/368f0561-802c-49f8-80b0-6bb7dfd2f042.png"
+    ],
     benefits: [
       "High protein content",
       "No artificial additives",
