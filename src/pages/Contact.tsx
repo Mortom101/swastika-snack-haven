@@ -1,4 +1,3 @@
-
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { PageHeader } from "@/components/PageHeader";
@@ -75,7 +74,7 @@ const Contact = () => {
                     Our production facility is located at
                   </p>
                   <p className="font-medium">
-                    Balaju, Kathmandu, Nepal
+                    Jorpati, Kathmandu, Nepal
                   </p>
                 </div>
               </div>
@@ -164,7 +163,7 @@ const Contact = () => {
             <div className="mt-8 bg-brand-gold/10 p-4 rounded-md">
               <h3 className="font-medium mb-2">Delivery Information</h3>
               <p className="text-sm text-muted-foreground">
-                We deliver all over Kathmandu Valley. Free delivery on orders above ₹1000. Standard delivery time is 1-2 business days within the valley.
+                We deliver all over Kathmandu Valley. Delivery fee is ₹100. Free delivery on orders above ₹1000. Standard delivery time is 1-2 business days within the valley.
               </p>
             </div>
           </motion.div>

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/layout/Layout";
@@ -515,7 +514,7 @@ const Order = () => {
                 
                 <div className="mt-6 text-sm text-muted-foreground">
                   <p>
-                    Free delivery on orders above ₹1000 within Kathmandu Valley.
+                    Delivery fee: ₹100. Free delivery on orders above ₹1000 within Kathmandu Valley.
                   </p>
                 </div>
               </div>

@@ -15,7 +15,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center space-x-2 text-sm text-white/60">
               <div className="w-8 h-0.5 bg-brand-gold"></div>
-              <span>Established 2015</span>
+              <span>Established 2024</span>
             </div>
           </div>
 
@@ -89,14 +89,14 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <MapPin size={18} className="text-brand-gold mt-1" />
                 <span className="text-white/80">
-                  Balaju, Kathmandu, Nepal
+                  Jorpati, Kathmandu, Nepal
                 </span>
               </li>
               <li className="pt-4">
                 <div className="bg-brand-gold/20 backdrop-blur-sm p-3 rounded-lg">
                   <h4 className="text-sm font-medium mb-1">Delivery</h4>
                   <p className="text-sm text-white/80">
-                    Available all over Kathmandu Valley. Free delivery on orders
+                    Available all over Kathmandu Valley. Delivery fee ₹100. Free delivery on orders
                     above ₹1000.
                   </p>
                 </div>
