@@ -48,9 +48,9 @@ export const ProductCard = ({
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       variants={variants}
-      className="product-card glass-card overflow-hidden"
+      className="product-card glass-card overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
     >
-      <div className="product-image-container">
+      <div className="product-image-container relative">
         <img 
           src={image} 
           alt={name} 

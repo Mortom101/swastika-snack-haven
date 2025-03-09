@@ -1,4 +1,3 @@
-
 import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronRight, ShoppingBag, Clock, Leaf, Truck } from "lucide-react";
@@ -8,13 +7,11 @@ import { ProductCard } from "@/components/ProductCard";
 import { ReviewCard } from "@/components/ReviewCard";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-// Placeholder images (in a real project, these would be actual product images)
 const productImages = {
-  phurandana: "https://images.unsplash.com/photo-1589365252845-092198ba5979?q=80&w=1000",
-  bakedPeanuts: "https://images.unsplash.com/photo-1567892737950-30ec3a50f965?q=80&w=1000",
+  phurandana: "/lovable-uploads/623cbeee-d5dd-44e1-87e5-ea19d8fb9db5.png",
+  bakedPeanuts: "/lovable-uploads/368f0561-802c-49f8-80b0-6bb7dfd2f042.png",
 };
 
-// Sample reviews data
 const reviews = [
   {
     name: "Ramesh Sharma",
@@ -55,7 +52,6 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
       <div 
         ref={targetRef}
         className="relative h-screen flex items-center justify-center overflow-hidden"
@@ -66,7 +62,7 @@ const Index = () => {
         >
           <div 
             className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: "url(https://images.unsplash.com/photo-1574484284002-952d92456975?q=80&w=1000)" }}
+            style={{ backgroundImage: "url(/lovable-uploads/c4218253-7110-4d14-ac25-b822e8ba6195.png)" }}
           />
           <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
         </motion.div>
@@ -118,7 +114,6 @@ const Index = () => {
         </div>
       </div>
 
-      {/* About Section */}
       <Section title="Our Story" centered>
         <div className="max-w-3xl mx-auto">
           <p className="text-lg mb-6 text-center">
@@ -162,7 +157,6 @@ const Index = () => {
         </div>
       </Section>
 
-      {/* Products Section */}
       <Section 
         title="Our Products" 
         subtitle="Traditional Nepali Snacks"
@@ -204,7 +198,6 @@ const Index = () => {
         </div>
       </Section>
 
-      {/* Customer Reviews */}
       <Section 
         title="Customer Reviews" 
         subtitle="What Our Customers Say"
@@ -224,7 +217,6 @@ const Index = () => {
         </div>
       </Section>
 
-      {/* CTA Section */}
       <Section className="bg-brand-red text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">

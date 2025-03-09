@@ -19,7 +19,7 @@ const products = {
     weight: "500g",
     shelfLife: "8 months",
     ingredients: ["Flattened rice", "Peanuts", "Salt", "Vegetable oil", "Traditional Nepali spices"],
-    image: "https://images.unsplash.com/photo-1589365252845-092198ba5979?q=80&w=1000",
+    image: "/lovable-uploads/623cbeee-d5dd-44e1-87e5-ea19d8fb9db5.png",
     benefits: [
       "All-natural ingredients",
       "No artificial preservatives",
@@ -43,7 +43,7 @@ const products = {
     weight: "125g",
     shelfLife: "8 months",
     ingredients: ["Peanuts", "Soybeans", "Salt", "Vegetable oil", "Chili", "Traditional Nepali spices"],
-    image: "https://images.unsplash.com/photo-1567892737950-30ec3a50f965?q=80&w=1000",
+    image: "/lovable-uploads/368f0561-802c-49f8-80b0-6bb7dfd2f042.png",
     benefits: [
       "High protein content",
       "No artificial additives",
