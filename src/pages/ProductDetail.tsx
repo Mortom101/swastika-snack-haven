@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ShoppingBag, CheckCircle, ChevronRight, ChevronLeft } from "lucide-react";
@@ -141,6 +140,7 @@ const ProductDetail = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             className="product-image-container overflow-hidden rounded-2xl relative"
+            style={{ position: "relative" }}
           >
             <img
               src={displayImages[currentImageIndex]}
