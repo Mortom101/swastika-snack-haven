@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ShoppingBag, CheckCircle, ChevronRight, ChevronLeft } from "lucide-react";
@@ -5,7 +6,6 @@ import Layout from "@/components/layout/Layout";
 import { PageHeader } from "@/components/PageHeader";
 import { Section } from "@/components/Section";
 import { motion } from "framer-motion";
-import { ReviewCard } from "@/components/ReviewCard";
 
 // Product data (in a real app, this would come from an API or database)
 const products = {
