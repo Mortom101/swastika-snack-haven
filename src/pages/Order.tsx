@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/layout/Layout";
@@ -316,7 +317,7 @@ const Order = () => {
                       key={product.id}
                       className="flex items-center border-b border-gray-100 py-4 last:border-0"
                     >
-                      <div className="w-20 h-20 rounded-md overflow-hidden flex-shrink-0">
+                      <div className="w-20 h-20 rounded-md overflow-hidden flex-shrink-0 aspect-square">
                         <img
                           src={product.image}
                           alt={product.name}

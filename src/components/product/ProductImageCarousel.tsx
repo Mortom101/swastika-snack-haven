@@ -6,9 +6,14 @@ import { motion } from "framer-motion";
 interface ProductImageCarouselProps {
   images: string[];
   productName: string;
+  aspectRatio?: "square" | "auto";
 }
 
-export const ProductImageCarousel = ({ images, productName }: ProductImageCarouselProps) => {
+export const ProductImageCarousel = ({ 
+  images, 
+  productName, 
+  aspectRatio = "auto" 
+}: ProductImageCarouselProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const hasMultipleImages = images.length > 1;
   
@@ -32,11 +37,13 @@ export const ProductImageCarousel = ({ images, productName }: ProductImageCarous
       className="product-image-container overflow-hidden rounded-2xl relative"
       style={{ position: "relative" }}
     >
-      <img
-        src={images[currentImageIndex]}
-        alt={`${productName} - Image ${currentImageIndex + 1}`}
-        className="w-full h-auto object-cover"
-      />
+      <div className={aspectRatio === "square" ? "aspect-square" : "aspect-[4/3]"}>
+        <img
+          src={images[currentImageIndex]}
+          alt={`${productName} - Image ${currentImageIndex + 1}`}
+          className="w-full h-full object-cover"
+        />
+      </div>
       
       {hasMultipleImages && (
         <>
