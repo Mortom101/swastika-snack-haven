@@ -6,6 +6,7 @@ import { Section } from "@/components/Section";
 import { ProductCard } from "@/components/ProductCard";
 import { ReviewCard } from "@/components/ReviewCard";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Reviews } from '@/components/reviews/Reviews';
 
 const productImages = {
   phurandana: "/lovable-uploads/a37c8589-bf5d-465c-a6a1-7272494bb503.png",
@@ -216,6 +217,8 @@ const Index = () => {
           ))}
         </div>
       </Section>
+
+      <Reviews />
 
       <Section className="bg-brand-red text-white">
         <div className="max-w-4xl mx-auto text-center">
