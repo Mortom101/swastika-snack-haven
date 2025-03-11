@@ -24,6 +24,14 @@ const Order = () => {
     { productId: "baked-peanuts-soyabeans", quantity: 0 }
   ]);
 
+  const handleQuantityChange = (productId: string, quantity: number) => {
+    setOrderItems(prev =>
+      prev.map(item =>
+        item.productId === productId ? { ...item, quantity } : item
+      )
+    );
+  };
+
   const handleSubmitOrder = (orderData: {
     name: string;
     phone: string;
@@ -44,7 +52,6 @@ const Order = () => {
         items: orderData.items
       });
       
-      // Reset form after success
       toast({
         title: "Order placed successfully!",
         description: "We'll contact you shortly to confirm your order."
@@ -71,6 +78,8 @@ const Order = () => {
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 max-w-6xl mx-auto">
             <OrderForm 
+              orderItems={orderItems}
+              onQuantityChange={handleQuantityChange}
               onSubmitOrder={handleSubmitOrder}
               isSubmitting={isSubmitting}
             />

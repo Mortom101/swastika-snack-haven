@@ -5,8 +5,11 @@ import { motion } from "framer-motion";
 import { ShoppingBag } from "lucide-react";
 import { OrderItem } from "@/types/order";
 import ProductSelector from "./ProductSelector";
+import { calculateTotal } from "./OrderSummary";
 
 interface OrderFormProps {
+  orderItems: OrderItem[];
+  onQuantityChange: (productId: string, quantity: number) => void;
   onSubmitOrder: (orderData: {
     name: string;
     phone: string;
@@ -18,24 +21,12 @@ interface OrderFormProps {
   isSubmitting: boolean;
 }
 
-const OrderForm = ({ onSubmitOrder, isSubmitting }: OrderFormProps) => {
+const OrderForm = ({ orderItems, onQuantityChange, onSubmitOrder, isSubmitting }: OrderFormProps) => {
   const { toast } = useToast();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [notes, setNotes] = useState("");
-  const [orderItems, setOrderItems] = useState<OrderItem[]>([
-    { productId: "phurandana", quantity: 1 },
-    { productId: "baked-peanuts-soyabeans", quantity: 0 }
-  ]);
-
-  const handleQuantityChange = (productId: string, quantity: number) => {
-    setOrderItems(prev =>
-      prev.map(item =>
-        item.productId === productId ? { ...item, quantity } : item
-      )
-    );
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,31 +52,14 @@ const OrderForm = ({ onSubmitOrder, isSubmitting }: OrderFormProps) => {
       toast({ title: "Please select at least one product", variant: "destructive" });
       return;
     }
-    
-    // Calculate totals using the utility functions from OrderSummary
-    const subtotal = orderItems.reduce((total, item) => {
-      const product = products.find(p => p.id === item.productId);
-      return total + (product?.price || 0) * item.quantity;
-    }, 0);
-    
-    const totalDiscount = orderItems.reduce((total, item) => {
-      const product = products.find(p => p.id === item.productId);
-      if (!product) return total;
-      
-      const discountPercentage = getApplicableDiscount(item.productId, item.quantity);
-      return total + (product.price * item.quantity * discountPercentage) / 100;
-    }, 0);
-    
-    const total = subtotal - totalDiscount;
-    
-    // Submit order
+
     onSubmitOrder({
       name,
       phone,
       address,
       notes,
       items: orderItems.filter(item => item.quantity > 0),
-      total
+      total: calculateTotal(orderItems)
     });
   };
 
@@ -163,7 +137,7 @@ const OrderForm = ({ onSubmitOrder, isSubmitting }: OrderFormProps) => {
           
           <ProductSelector
             orderItems={orderItems}
-            onQuantityChange={handleQuantityChange}
+            onQuantityChange={onQuantityChange}
           />
         </div>
         
