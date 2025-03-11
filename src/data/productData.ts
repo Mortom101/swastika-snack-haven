@@ -33,9 +33,9 @@ export const products: ProductsData = {
     weight: "500g",
     shelfLife: "8 months",
     ingredients: ["Flattened rice", "Peanuts", "Salt", "Vegetable oil", "Traditional Nepali spices"],
-    image: "/lovable-uploads/c4218253-7110-4d14-ac25-b822e8ba6195.png",
+    image: "/lovable-uploads/a37c8589-bf5d-465c-a6a1-7272494bb503.png",
     images: [
-      "/lovable-uploads/c4218253-7110-4d14-ac25-b822e8ba6195.png"
+      "/lovable-uploads/a37c8589-bf5d-465c-a6a1-7272494bb503.png"
     ],
     benefits: [
       "All-natural ingredients",

@@ -6,8 +6,9 @@ import { PageHeader } from "@/components/PageHeader";
 import { Section } from "@/components/Section";
 import { motion } from "framer-motion";
 import { ShoppingBag, Check } from "lucide-react";
+import { products as productData } from "@/data/productData";
 
-// Product data
+// Product data for orders
 const products = [
   {
     id: "phurandana",
@@ -15,7 +16,7 @@ const products = [
     nepaliName: "फुरन्दाना",
     price: 250,
     weight: "500g",
-    image: "https://images.unsplash.com/photo-1589365252845-092198ba5979?q=80&w=1000"
+    image: productData.phurandana.image
   },
   {
     id: "baked-peanuts-soyabeans",
@@ -23,7 +24,7 @@ const products = [
     nepaliName: "साँदेको बदाम र भटमास",
     price: 70,
     weight: "125g",
-    image: "https://images.unsplash.com/photo-1567892737950-30ec3a50f965?q=80&w=1000"
+    image: productData["baked-peanuts-soyabeans"].image
   }
 ];
 
