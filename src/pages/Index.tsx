@@ -8,7 +8,7 @@ import { ReviewCard } from "@/components/ReviewCard";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const productImages = {
-  phurandana: "/lovable-uploads/c4218253-7110-4d14-ac25-b822e8ba6195.png",
+  phurandana: "/lovable-uploads/a37c8589-bf5d-465c-a6a1-7272494bb503.png",
   bakedPeanuts: "/lovable-uploads/368f0561-802c-49f8-80b0-6bb7dfd2f042.png",
 };
 
