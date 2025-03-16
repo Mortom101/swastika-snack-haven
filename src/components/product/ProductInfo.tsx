@@ -72,7 +72,7 @@ export const ProductInfo = ({
         <span>Order Now</span>
       </Link>
       
-      <div className="bg-brand-gold/10 p-4 rounded-lg">
+      <div className="bg-brand-gold/10 p-4 rounded-lg mb-4">
         <h3 className="font-medium mb-2">Bulk Order Discounts</h3>
         <ul className="space-y-1">
           {bulkDiscounts.map((discount, index) => (
@@ -84,6 +84,11 @@ export const ProductInfo = ({
             </li>
           ))}
         </ul>
+      </div>
+
+      <div className="bg-muted/50 p-4 rounded-lg text-sm">
+        <h3 className="font-medium mb-1">Delivery Information</h3>
+        <p>We deliver nationwide across Nepal. Free delivery on orders above ₹1000 within Kathmandu Valley and ₹2000 for nationwide orders.</p>
       </div>
     </motion.div>
   );

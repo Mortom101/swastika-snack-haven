@@ -124,7 +124,7 @@ const OrderForm = ({ orderItems, onQuantityChange, onSubmitOrder, isSubmitting }
                 onChange={(e) => setAddress(e.target.value)}
                 rows={3}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brand-red focus:border-brand-red transition-colors"
-                placeholder="Enter your delivery address (within Kathmandu Valley)"
+                placeholder="Enter your complete delivery address (anywhere in Nepal)"
               />
             </div>
           </div>

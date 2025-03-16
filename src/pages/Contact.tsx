@@ -1,3 +1,4 @@
+
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { PageHeader } from "@/components/PageHeader";
@@ -163,7 +164,7 @@ const Contact = () => {
             <div className="mt-8 bg-brand-gold/10 p-4 rounded-md">
               <h3 className="font-medium mb-2">Delivery Information</h3>
               <p className="text-sm text-muted-foreground">
-                We deliver all over Kathmandu Valley. Delivery fee is ₹100. Free delivery on orders above ₹1000. Standard delivery time is 1-2 business days within the valley.
+                We deliver all over Nepal. Delivery fee ranges from ₹100 within Kathmandu Valley to ₹200-₹500 for other regions depending on distance. Free delivery on orders above ₹1000 within Kathmandu Valley and ₹2000 for nationwide orders. Standard delivery time is 1-2 business days within the valley, and 3-7 days for other regions.
               </p>
             </div>
           </motion.div>
@@ -176,7 +177,7 @@ const Contact = () => {
             Ready to Experience Authentic Nepali Snacks?
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Order now and get fresh, preservative-free products delivered to your doorstep.
+            Order now and get fresh, preservative-free products delivered to your doorstep anywhere in Nepal.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a

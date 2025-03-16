@@ -96,8 +96,7 @@ const Footer = () => {
                 <div className="bg-brand-gold/20 backdrop-blur-sm p-3 rounded-lg">
                   <h4 className="text-sm font-medium mb-1">Delivery</h4>
                   <p className="text-sm text-white/80">
-                    Available all over Kathmandu Valley. Delivery fee ₹100. Free delivery on orders
-                    above ₹1000.
+                    Available nationwide across Nepal. Delivery fee varies by region (₹100-₹500). Free delivery on orders above ₹1000 within Kathmandu Valley and ₹2000 for nationwide orders.
                   </p>
                 </div>
               </li>

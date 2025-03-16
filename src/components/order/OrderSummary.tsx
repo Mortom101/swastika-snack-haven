@@ -96,7 +96,7 @@ const OrderSummary = ({ orderItems }: OrderSummaryProps) => {
         
         <div className="mt-6 text-sm text-muted-foreground">
           <p>
-            Delivery fee: ₹100. Free delivery on orders above ₹1000 within Kathmandu Valley.
+            Delivery fee: ₹100 within Kathmandu Valley, ₹200-₹500 for other regions depending on distance. Free delivery on orders above ₹1000 within Kathmandu Valley, ₹2000 for nationwide delivery.
           </p>
         </div>
       </div>
