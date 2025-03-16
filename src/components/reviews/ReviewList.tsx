@@ -11,7 +11,7 @@ interface ReviewListProps {
 
 export const ReviewList = ({ reviews, onDelete, isAdmin = false }: ReviewListProps) => {
   return (
-    <div className="space-y-4 max-w-4xl mx-auto">
+    <div className="space-y-4 max-w-4xl mx-0">
       {reviews.map((review, index) => (
         <motion.div
           key={review.id}
@@ -47,13 +47,13 @@ export const ReviewList = ({ reviews, onDelete, isAdmin = false }: ReviewListPro
               </button>
             )}
           </div>
-          <p className="mt-2 text-gray-600">{review.comment}</p>
+          <p className="mt-2 text-gray-600 text-left">{review.comment}</p>
           <p className="mt-2 text-sm text-gray-400">{review.date}</p>
         </motion.div>
       ))}
 
       {reviews.length === 0 && (
-        <p className="text-center text-gray-500 py-8">
+        <p className="text-left text-gray-500 py-8">
           No reviews yet. Be the first to share your experience!
         </p>
       )}

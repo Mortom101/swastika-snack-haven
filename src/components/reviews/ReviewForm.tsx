@@ -30,9 +30,9 @@ export const ReviewForm = ({ onSubmit }: ReviewFormProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-w-xl mx-auto bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-sm">
+    <form onSubmit={handleSubmit} className="space-y-4 max-w-xl mx-0 bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-sm">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1 text-left">
           Full Name *
         </label>
         <input
@@ -46,10 +46,10 @@ export const ReviewForm = ({ onSubmit }: ReviewFormProps) => {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 mb-1 text-left">
           Rating *
         </label>
-        <div className="flex gap-1">
+        <div className="flex gap-1 justify-start">
           {[1, 2, 3, 4, 5].map((index) => (
             <button
               key={index}
@@ -73,7 +73,7 @@ export const ReviewForm = ({ onSubmit }: ReviewFormProps) => {
       </div>
 
       <div>
-        <label htmlFor="comment" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="comment" className="block text-sm font-medium text-gray-700 mb-1 text-left">
           Review *
         </label>
         <textarea
@@ -87,7 +87,7 @@ export const ReviewForm = ({ onSubmit }: ReviewFormProps) => {
       </div>
 
       {error && (
-        <p className="text-red-500 text-sm">{error}</p>
+        <p className="text-red-500 text-sm text-left">{error}</p>
       )}
 
       <button
