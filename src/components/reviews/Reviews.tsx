@@ -30,7 +30,7 @@ export const Reviews = ({ isAdmin = false }: ReviewsProps) => {
       title="Customer Reviews"
       subtitle="Share Your Experience"
       className="bg-brand-lightGold"
-      centered
+      centered={false}
     >
       <div className="space-y-12">
         <ReviewForm onSubmit={handleSubmit} />

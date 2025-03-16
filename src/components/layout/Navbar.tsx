@@ -31,6 +31,11 @@ const Navbar = () => {
     setIsMenuOpen(false);
   }, [location.pathname]);
 
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Phurandana", path: "/products/phurandana" },
@@ -45,14 +50,14 @@ const Navbar = () => {
         "fixed top-0 left-0 right-0 z-40 transition-all duration-300 px-6 py-4",
         isScrolled
           ? "bg-white/90 backdrop-blur-md shadow-md"
-          : "bg-transparent"
+          : "bg-white/50 backdrop-blur-sm"
       )}
     >
       <div className="container mx-auto flex justify-between items-center">
         <Link 
           to="/" 
-          className="flex items-center gap-2 opacity-0 animate-fade-in"
-          style={{ animationDelay: "100ms", animationFillMode: "forwards" }}
+          className="flex items-center gap-2 opacity-100"
+          style={{ animationFillMode: "forwards" }}
         >
           <span className="text-brand-red font-display text-2xl font-bold">Swastika</span>
           <span className="hidden sm:block text-sm text-muted-foreground font-medium tracking-wide">Small Cottage Industry</span>
@@ -65,11 +70,10 @@ const Navbar = () => {
               key={link.path}
               to={link.path}
               className={cn(
-                "nav-link text-sm font-medium opacity-0 animate-fade-in",
-                location.pathname === link.path && "active",
+                "nav-link text-sm font-medium opacity-100 text-foreground",
+                location.pathname === link.path ? "text-brand-red" : "",
               )}
               style={{ 
-                animationDelay: `${150 + index * 100}ms`,
                 animationFillMode: "forwards"
               }}
             >
