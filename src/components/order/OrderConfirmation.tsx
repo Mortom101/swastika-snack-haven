@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, MessageCircle } from "lucide-react";
 import { OrderItem } from "@/types/order";
 import { getProductById, calculateTotal } from "./OrderSummary";
 
@@ -29,6 +29,26 @@ const OrderConfirmation = ({ name, phone, orderItems }: OrderConfirmationProps) 
       <p className="text-lg text-muted-foreground mb-6">
         We have received your order and will contact you soon at <span className="font-medium">{phone}</span> to confirm the details.
       </p>
+
+      {/* WhatsApp Screenshot Request */}
+      <div className="bg-green-50 border border-green-200 p-6 rounded-lg mb-8">
+        <div className="flex items-center justify-center mb-3">
+          <MessageCircle className="w-6 h-6 text-green-600 mr-2" />
+          <h3 className="font-medium text-green-800">Important: Order Confirmation</h3>
+        </div>
+        <p className="text-green-700 text-sm">
+          Please send a screenshot of your transaction to our WhatsApp for us to confirm your order.
+        </p>
+        <a
+          href="https://wa.me/9779841234567"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center mt-3 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
+        >
+          <MessageCircle className="w-4 h-4 mr-2" />
+          Send to WhatsApp
+        </a>
+      </div>
       
       <div className="bg-muted/50 p-6 rounded-lg mb-8 text-left">
         <h3 className="font-medium mb-4">Order Summary</h3>

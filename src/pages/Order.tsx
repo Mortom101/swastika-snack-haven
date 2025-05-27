@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/layout/Layout";
 import { PageHeader } from "@/components/PageHeader";
@@ -23,6 +23,13 @@ const Order = () => {
     { productId: "phurandana", quantity: 1 },
     { productId: "baked-peanuts-soyabeans", quantity: 0 }
   ]);
+
+  // Scroll to top when order is placed
+  useEffect(() => {
+    if (orderPlaced) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [orderPlaced]);
 
   const handleQuantityChange = (productId: string, quantity: number) => {
     setOrderItems(prev =>
@@ -63,10 +70,12 @@ const Order = () => {
 
   return (
     <Layout>
-      <PageHeader
-        title="Place Your Order"
-        subtitle="Fill out the form below to order our handmade Nepali snacks"
-      />
+      {!orderPlaced && (
+        <PageHeader
+          title="Place Your Order"
+          subtitle="Fill out the form below to order our handmade Nepali snacks"
+        />
+      )}
       
       <Section>
         {orderPlaced ? (
