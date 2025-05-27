@@ -57,7 +57,6 @@ const ProductDetail = () => {
             price={product.price}
             weight={product.weight}
             description={product.description}
-            bulkDiscounts={product.bulkDiscounts}
           />
         </div>
       </Section>

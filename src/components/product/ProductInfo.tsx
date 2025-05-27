@@ -1,12 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ShoppingBag, CheckCircle } from "lucide-react";
-
-interface BulkDiscount {
-  quantity: number;
-  discount: string;
-}
+import { ShoppingBag } from "lucide-react";
 
 interface ProductInfoProps {
   name: string;
@@ -14,7 +9,6 @@ interface ProductInfoProps {
   price: number;
   weight: string;
   description: string;
-  bulkDiscounts: BulkDiscount[];
 }
 
 export const ProductInfo = ({ 
@@ -22,8 +16,7 @@ export const ProductInfo = ({
   nepaliName, 
   price, 
   weight, 
-  description, 
-  bulkDiscounts 
+  description
 }: ProductInfoProps) => {
   return (
     <motion.div
@@ -71,24 +64,10 @@ export const ProductInfo = ({
         <ShoppingBag size={18} />
         <span>Order Now</span>
       </Link>
-      
-      <div className="bg-brand-gold/10 p-4 rounded-lg mb-4">
-        <h3 className="font-medium mb-2">Bulk Order Discounts</h3>
-        <ul className="space-y-1">
-          {bulkDiscounts.map((discount, index) => (
-            <li key={index} className="flex items-center gap-2 text-sm">
-              <CheckCircle size={16} className="text-brand-gold" />
-              <span>
-                {discount.discount} off on orders of {discount.quantity} or more
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
 
       <div className="bg-muted/50 p-4 rounded-lg text-sm">
         <h3 className="font-medium mb-1">Delivery Information</h3>
-        <p>We deliver nationwide across Nepal. Free delivery on orders above ₹1000 within Kathmandu Valley and ₹2000 for nationwide orders.</p>
+        <p>We deliver nationwide across Nepal. Delivery is free inside Kathmandu Valley. Outside Kathmandu Valley, courier charges will be included based on your location.</p>
       </div>
     </motion.div>
   );

@@ -12,10 +12,6 @@ export interface Product {
   image: string;
   images: string[];
   benefits: string[];
-  bulkDiscounts: {
-    quantity: number;
-    discount: string;
-  }[];
 }
 
 export interface ProductsData {
@@ -43,11 +39,6 @@ export const products: ProductsData = {
       "Traditional preparation methods",
       "Authentic Nepali taste",
       "Carefully sealed for freshness"
-    ],
-    bulkDiscounts: [
-      { quantity: 5, discount: "5%" },
-      { quantity: 10, discount: "10%" },
-      { quantity: 20, discount: "15%" }
     ]
   },
   "baked-peanuts-soyabeans": {
@@ -70,11 +61,6 @@ export const products: ProductsData = {
       "Traditional preparation methods",
       "Authentic Nepali taste",
       "Carefully sealed for freshness"
-    ],
-    bulkDiscounts: [
-      { quantity: 10, discount: "5%" },
-      { quantity: 20, discount: "10%" },
-      { quantity: 30, discount: "15%" }
     ]
   }
 };

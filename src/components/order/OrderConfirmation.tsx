@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { OrderItem } from "@/types/order";
-import { getProductById, calculateSubtotal, calculateTotalDiscount, calculateTotal } from "./OrderSummary";
+import { getProductById, calculateTotal } from "./OrderSummary";
 
 interface OrderConfirmationProps {
   name: string;
@@ -54,22 +54,20 @@ const OrderConfirmation = ({ name, phone, orderItems }: OrderConfirmationProps) 
             })}
           
           <div className="border-t pt-4">
-            <div className="flex justify-between">
-              <p>Subtotal</p>
-              <p>₹{calculateSubtotal(orderItems)}</p>
-            </div>
-            
-            <div className="flex justify-between text-green-600">
-              <p>Bulk Discount</p>
-              <p>- ₹{calculateTotalDiscount(orderItems)}</p>
-            </div>
-            
             <div className="flex justify-between font-bold mt-2">
               <p>Total</p>
               <p>₹{calculateTotal(orderItems)}</p>
             </div>
           </div>
         </div>
+      </div>
+      
+      <div className="bg-muted/50 p-4 rounded-lg mb-6 text-left">
+        <h3 className="font-medium mb-2">Delivery Information</h3>
+        <p className="text-sm text-muted-foreground">
+          We deliver nationwide across Nepal. Delivery is free inside Kathmandu Valley. 
+          Outside Kathmandu Valley, courier charges will be included based on your location.
+        </p>
       </div>
       
       <p className="text-muted-foreground">
