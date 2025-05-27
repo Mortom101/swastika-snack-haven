@@ -181,8 +181,8 @@ const Index = () => {
             name="Baked Peanuts & Soyabeans"
             nepaliName="साँदेको बदाम र भटमास"
             description="A crunchy and flavorful snack made with carefully selected peanuts and soybeans, seasoned to perfection."
-            price={70}
-            weight="125g"
+            price={140}
+            weight="250g"
             image={productImages.bakedPeanuts}
             index={1}
           />
