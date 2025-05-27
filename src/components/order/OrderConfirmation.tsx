@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Check, MessageCircle } from "lucide-react";
 import { OrderItem } from "@/types/order";
@@ -18,20 +17,40 @@ const OrderConfirmation = ({ name, phone, orderItems }: OrderConfirmationProps) 
       transition={{ duration: 0.6 }}
       className="max-w-2xl mx-auto text-center"
     >
-      <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+      <motion.div 
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
+      >
         <Check className="w-10 h-10 text-green-600" />
-      </div>
+      </motion.div>
       
-      <h2 className="text-2xl font-display font-bold mb-4">
+      <motion.h2 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="text-2xl font-display font-bold mb-4"
+      >
         Thank You for Your Order!
-      </h2>
+      </motion.h2>
       
-      <p className="text-lg text-muted-foreground mb-6">
+      <motion.p 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        className="text-lg text-muted-foreground mb-6"
+      >
         We have received your order and will contact you soon at <span className="font-medium">{phone}</span> to confirm the details.
-      </p>
+      </motion.p>
 
       {/* WhatsApp Screenshot Request */}
-      <div className="bg-green-50 border border-green-200 p-6 rounded-lg mb-8">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        className="bg-green-50 border border-green-200 p-6 rounded-lg mb-8"
+      >
         <div className="flex items-center justify-center mb-3">
           <MessageCircle className="w-6 h-6 text-green-600 mr-2" />
           <h3 className="font-medium text-green-800">Important: Order Confirmation</h3>
@@ -48,9 +67,14 @@ const OrderConfirmation = ({ name, phone, orderItems }: OrderConfirmationProps) 
           <MessageCircle className="w-4 h-4 mr-2" />
           Send to WhatsApp
         </a>
-      </div>
+      </motion.div>
       
-      <div className="bg-muted/50 p-6 rounded-lg mb-8 text-left">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1.0 }}
+        className="bg-muted/50 p-6 rounded-lg mb-8 text-left"
+      >
         <h3 className="font-medium mb-4">Order Summary</h3>
         
         <div className="space-y-4">
@@ -80,17 +104,27 @@ const OrderConfirmation = ({ name, phone, orderItems }: OrderConfirmationProps) 
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
       
-      <div className="bg-muted/50 p-4 rounded-lg mb-6 text-left">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1.2 }}
+        className="bg-muted/50 p-4 rounded-lg mb-6 text-left"
+      >
         <h3 className="font-medium mb-2">Delivery Information</h3>
         <p className="text-sm text-muted-foreground">
           We deliver nationwide across Nepal. Delivery is free inside Kathmandu Valley. 
           Outside Kathmandu Valley, courier charges will be included based on your location.
         </p>
-      </div>
+      </motion.div>
       
-      <p className="text-muted-foreground">
+      <motion.p 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 1.4 }}
+        className="text-muted-foreground"
+      >
         If you have any questions about your order, please call us at{" "}
         <a
           href="tel:+9779841234567"
@@ -98,7 +132,7 @@ const OrderConfirmation = ({ name, phone, orderItems }: OrderConfirmationProps) 
         >
           +977 9841234567
         </a>
-      </p>
+      </motion.p>
     </motion.div>
   );
 };

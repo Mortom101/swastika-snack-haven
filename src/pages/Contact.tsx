@@ -164,7 +164,8 @@ const Contact = () => {
             <div className="mt-8 bg-brand-gold/10 p-4 rounded-md">
               <h3 className="font-medium mb-2">Delivery Information</h3>
               <p className="text-sm text-muted-foreground">
-                We deliver all over Nepal. Delivery fee ranges from ₹100 within Kathmandu Valley to ₹200-₹500 for other regions depending on distance. Free delivery on orders above ₹1000 within Kathmandu Valley and ₹2000 for nationwide orders. Standard delivery time is 1-2 business days within the valley, and 3-7 days for other regions.
+                We deliver nationwide across Nepal. Delivery is free inside Kathmandu Valley. 
+                Outside Kathmandu Valley, courier charges will be included based on your location.
               </p>
             </div>
           </motion.div>
