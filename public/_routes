@@ -1,0 +1,6 @@
+
+# Include all files in the public directory
+/public/*
+
+# Handle all other routes as SPA
+/*    /index.html   200

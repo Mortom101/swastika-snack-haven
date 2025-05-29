@@ -3,18 +3,33 @@
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, POST, OPTIONS
+  Access-Control-Allow-Headers: Content-Type
 
 /*.js
   Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000
 
 /*.mjs
   Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000
 
 /*.tsx
   Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000
 
 /*.ts
   Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000
 
 /*.jsx
   Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000
+
+/src/*
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000
+
+/assets/*
+  Cache-Control: public, max-age=31536000

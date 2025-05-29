@@ -16,8 +16,31 @@
 
   <body>
     <div id="root"></div>
+    <!-- Load the Lovable script first with proper error handling -->
+    <script>
+      // Add error handling for script loading
+      window.addEventListener('error', function(e) {
+        if (e.target && e.target.tagName === 'SCRIPT') {
+          console.error('Script loading error:', e.target.src, e.message);
+        }
+      });
+    </script>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module" crossorigin></script>
-    <script type="module" src="/src/main.tsx" crossorigin></script>
+    <!-- Main application script with error handling -->
+    <script type="module" crossorigin>
+      try {
+        import('/src/main.tsx').catch(err => {
+          console.error('Failed to load main module:', err);
+          // Fallback: try loading the compiled version
+          import('/src/main.js').catch(fallbackErr => {
+            console.error('Fallback also failed:', fallbackErr);
+            document.getElementById('root').innerHTML = '<div style="padding: 20px; text-align: center; font-family: Arial, sans-serif;"><h1>Loading Error</h1><p>Unable to load the application. Please check your internet connection and try refreshing the page.</p></div>';
+          });
+        });
+      } catch (err) {
+        console.error('Script execution error:', err);
+      }
+    </script>
   </body>
 </html>
