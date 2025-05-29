@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Heart } from "lucide-react";
 
@@ -8,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="space-y-4">
-            <h3 className="text-2xl font-display font-semibold">Swastika</h3>
+            <h3 className="text-2xl font-display font-semibold">Swastik</h3>
             <p className="text-white/80 max-w-xs">
               A small cottage industry dedicated to crafting authentic,
               preservative-free Nepali snacks with traditional recipes.
@@ -80,10 +79,10 @@ const Footer = () => {
               <li className="flex items-center space-x-3">
                 <Mail size={18} className="text-brand-gold" />
                 <a
-                  href="mailto:info@swastikafood.com"
+                  href="mailto:info@swastikfood.com"
                   className="text-white/80 hover:text-brand-gold transition-colors duration-300"
                 >
-                  info@swastikafood.com
+                  info@swastikfood.com
                 </a>
               </li>
               <li className="flex items-start space-x-3">
@@ -106,7 +105,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-white/60">
-            &copy; {new Date().getFullYear()} Swastika Small Cottage Industry. All rights reserved.
+            &copy; {new Date().getFullYear()} Swastik Small Cottage Industry. All rights reserved.
           </p>
           <p className="text-sm text-white/60 flex items-center mt-2 md:mt-0">
             Crafted with <Heart size={14} className="mx-1 text-brand-gold" /> in

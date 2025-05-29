@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -59,7 +58,7 @@ const Navbar = () => {
           className="flex items-center gap-2 opacity-100"
           style={{ animationFillMode: "forwards" }}
         >
-          <span className="text-brand-red font-display text-2xl font-bold">Swastika</span>
+          <span className="text-brand-red font-display text-2xl font-bold">Swastik</span>
           <span className="hidden sm:block text-sm text-muted-foreground font-medium tracking-wide">Small Cottage Industry</span>
         </Link>
 

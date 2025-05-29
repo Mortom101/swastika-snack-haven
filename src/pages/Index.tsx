@@ -118,7 +118,7 @@ const Index = () => {
       <Section title="Our Story" centered>
         <div className="max-w-3xl mx-auto">
           <p className="text-lg mb-6 text-center">
-            Swastika Small Cottage Industry was founded with a simple mission: to preserve the authentic taste of traditional Nepali snacks, made with love and care just like our grandmothers used to make.
+            Swastik Small Cottage Industry was founded with a simple mission: to preserve the authentic taste of traditional Nepali snacks, made with love and care just like our grandmothers used to make.
           </p>
           <p className="text-center mb-8">
             We use only the finest ingredients, traditional recipes, and avoid preservatives to bring you the most authentic and delicious Nepali snacks.
