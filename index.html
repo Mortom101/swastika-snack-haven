@@ -32,11 +32,7 @@
       try {
         import('/src/main.tsx').catch(err => {
           console.error('Failed to load main module:', err);
-          // Fallback: try loading the compiled version
-          import('/src/main.js').catch(fallbackErr => {
-            console.error('Fallback also failed:', fallbackErr);
-            document.getElementById('root').innerHTML = '<div style="padding: 20px; text-align: center; font-family: Arial, sans-serif;"><h1>Loading Error</h1><p>Unable to load the application. Please check your internet connection and try refreshing the page.</p></div>';
-          });
+          document.getElementById('root').innerHTML = '<div style="padding: 20px; text-align: center; font-family: Arial, sans-serif;"><h1>Loading Error</h1><p>Unable to load the application. Please check your internet connection and try refreshing the page.</p><button onclick="window.location.reload()" style="padding: 10px 20px; margin-top: 10px; background: #dc2626; color: white; border: none; border-radius: 5px; cursor: pointer;">Refresh Page</button></div>';
         });
       } catch (err) {
         console.error('Script execution error:', err);
